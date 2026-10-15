@@ -13,7 +13,7 @@ class ListLinked : public List<T> {
 	Node<T>* first;
 	int n;
     public:
-	Listlinked(){
+	ListLinked(){
 		this->first=nullptr;
 		this->n=0;
 	}
@@ -31,10 +31,10 @@ class ListLinked : public List<T> {
 	}
 
 	T operator[] (int pos){
-		if(pos<0 || pos>size()-1){
-			throw stf::out_of_range ("Fuera de rango");
+		if(pos<0 || pos> n-1){
+			throw std::out_of_range ("Fuera de rango");
 		}else{
-			return node_at(pos)->data;
+			return first(pos)->data;
 		}
 	}
 
@@ -48,4 +48,4 @@ class ListLinked : public List<T> {
 	}
 };
 
-#endif LIST_LINKED_H
+#endif // LIST_LINKED_H 
